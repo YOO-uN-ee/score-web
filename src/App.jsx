@@ -25,7 +25,7 @@ function App() {
   const [hw4val, setHW4] = useState(parseFloat(localStorage.getItem('hw4')) || 0);
   const [hw5val, setHW5] = useState(parseFloat(localStorage.getItem('hw5')) || 0);
 
-  const [competition, setCompetition] = useState(parseInt(localStorage.getItem('competition')) || 0);
+  const [competition, setCompetition] = useState(parseInt(localStorage.getItem('competition')) || 10);
 
   useEffect(() => {
     const handleChangeNative = () => {};
@@ -54,8 +54,8 @@ function App() {
     estimated_score = (quiz_contribution + hw_contribution) / 0.9
   }
   else {
-    let my_competition = (10 + parseFloat(competition)) * 10 * 0.1;
-    estimated_score = (quiz_contribution + hw_contribution + my_competition)
+    // let my_competition = (10 + parseFloat(competition)) * 10 * 0.1;
+    estimated_score = ((quiz_contribution + hw_contribution) / 0.9) + 5 + parseInt(competition)
   }
 
   return (
@@ -181,9 +181,11 @@ function App() {
             <h3 className='font-bold p-2.5'>Homeworks</h3>
             <div>
               <label htmlFor="HW1" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">HW1</label>
+              <div className='flex flex-row gap-2'>
                 <input 
                   type="number" ref={ref} value={hw1val} onChange={(event) => {setHW1(event.currentTarget.value); localStorage.setItem("hw1", event.currentTarget.value);}} min="0" max="12" defaultValue="0"
                   className="bg-gray-50 mb-2 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required />
+              </div>
             </div>
             <div>
               <label htmlFor="HW2" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">HW2</label>
