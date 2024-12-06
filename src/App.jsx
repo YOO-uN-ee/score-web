@@ -25,7 +25,7 @@ function App() {
   const [hw4val, setHW4] = useState(localStorage.getItem('hw4') || 0);
   const [hw5val, setHW5] = useState(localStorage.getItem('hw5') || 0);
 
-  const [competition, setCompetition] = useState(localStorage.getItem('competition') || -1);
+  const [competition, setCompetition] = useState(localStorage.getItem('competition') || 10);
 
   useEffect(() => {
     const handleChangeNative = () => {};
@@ -50,7 +50,7 @@ function App() {
 
   let estimated_score = 0
 
-  if (competition === -1){
+  if (competition === 10){
     estimated_score = (quiz_contribution + hw_contribution) / 0.9
   }
   else {
@@ -236,7 +236,7 @@ function App() {
               </div>
               
               <div className="flex">
-                <input checked id="none" type="radio" value="" name="final-competition" onChange={(event) => {setCompetition(-1); localStorage.setItem("competition", -1);}} className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
+                <input id="none" type="radio" value="" name="final-competition" onChange={(event) => {setCompetition(10); localStorage.setItem("competition", 10);}} className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
                 <label forHtml="None" className="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">I give up</label>
               </div>
               </div>
