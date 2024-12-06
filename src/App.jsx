@@ -4,28 +4,28 @@ import './App.css'
 
 function App() {
   const ref = useRef(null);
-  const [quiz1val, setQuiz1] = useState(localStorage.getItem('quiz1') || 0);
-  const [quiz2val, setQuiz2] = useState(localStorage.getItem('quiz2') || 0);
-  const [quiz3val, setQuiz3] = useState(localStorage.getItem('quiz3') || 0);
-  const [quiz4val, setQuiz4] = useState(localStorage.getItem('quiz4') || 0);
-  const [quiz5val, setQuiz5] = useState(localStorage.getItem('quiz5') || 0);
-  const [quiz6val, setQuiz6] = useState(localStorage.getItem('quiz6') || 0);
-  const [quiz7val, setQuiz7] = useState(localStorage.getItem('quiz7') || 0);
-  const [quiz8val, setQuiz8] = useState(localStorage.getItem('quiz8') || 0);
+  const [quiz1val, setQuiz1] = useState(parseFloat(localStorage.getItem('quiz1')) || 0);
+  const [quiz2val, setQuiz2] = useState(parseFloat(localStorage.getItem('quiz2')) || 0);
+  const [quiz3val, setQuiz3] = useState(parseFloat(localStorage.getItem('quiz3')) || 0);
+  const [quiz4val, setQuiz4] = useState(parseFloat(localStorage.getItem('quiz4')) || 0);
+  const [quiz5val, setQuiz5] = useState(parseFloat(localStorage.getItem('quiz5')) || 0);
+  const [quiz6val, setQuiz6] = useState(parseFloat(localStorage.getItem('quiz6')) || 0);
+  const [quiz7val, setQuiz7] = useState(parseFloat(localStorage.getItem('quiz7')) || 0);
+  const [quiz8val, setQuiz8] = useState(parseFloat(localStorage.getItem('quiz8')) || 0);
   const [quiz9val, setQuiz9] = useState(0);
-  const [quiz10val, setQuiz10] = useState(localStorage.getItem('quiz10') || 0);
-  const [quiz11val, setQuiz11] = useState(localStorage.getItem('quiz11') || 0);
-  const [quiz12val, setQuiz12] = useState(localStorage.getItem('quiz12') || 0);
-  const [quiz13val, setQuiz13] = useState(localStorage.getItem('quiz13') || 0);
-  const [quiz14val, setQuiz14] = useState(localStorage.getItem('quiz14') || 0);
+  const [quiz10val, setQuiz10] = useState(parseFloat(localStorage.getItem('quiz10')) || 0);
+  const [quiz11val, setQuiz11] = useState(parseFloat(localStorage.getItem('quiz11')) || 0);
+  const [quiz12val, setQuiz12] = useState(parseFloat(localStorage.getItem('quiz12')) || 0);
+  const [quiz13val, setQuiz13] = useState(parseFloat(localStorage.getItem('quiz13')) || 0);
+  const [quiz14val, setQuiz14] = useState(parseFloat(localStorage.getItem('quiz14')) || 0);
 
-  const [hw1val, setHW1] = useState(localStorage.getItem('hw1') || 0);
-  const [hw2val, setHW2] = useState(localStorage.getItem('hw2') || 0);
-  const [hw3val, setHW3] = useState(localStorage.getItem('hw3') || 0);
-  const [hw4val, setHW4] = useState(localStorage.getItem('hw4') || 0);
-  const [hw5val, setHW5] = useState(localStorage.getItem('hw5') || 0);
+  const [hw1val, setHW1] = useState(parseFloat(localStorage.getItem('hw1')) || 0);
+  const [hw2val, setHW2] = useState(parseFloat(localStorage.getItem('hw2')) || 0);
+  const [hw3val, setHW3] = useState(parseFloat(localStorage.getItem('hw3')) || 0);
+  const [hw4val, setHW4] = useState(parseFloat(localStorage.getItem('hw4')) || 0);
+  const [hw5val, setHW5] = useState(parseFloat(localStorage.getItem('hw5')) || 0);
 
-  const [competition, setCompetition] = useState(localStorage.getItem('competition') || 10);
+  const [competition, setCompetition] = useState(parseInt(localStorage.getItem('competition')) || 0);
 
   useEffect(() => {
     const handleChangeNative = () => {};
@@ -54,7 +54,7 @@ function App() {
     estimated_score = (quiz_contribution + hw_contribution) / 0.9
   }
   else {
-    let my_competition = (10 + competition) * 10 * 0.1;
+    let my_competition = (10 + parseFloat(competition)) * 10 * 0.1;
     estimated_score = (quiz_contribution + hw_contribution + my_competition)
   }
 
