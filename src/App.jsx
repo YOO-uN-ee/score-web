@@ -49,6 +49,7 @@ function App() {
   let hw_contribution = (hw_score / all_hw.length) * 10 * 0.6;
 
   let estimated_score = 0
+
   if (competition === -1){
     estimated_score = (quiz_contribution + hw_contribution) / 0.9
   }
@@ -230,12 +231,12 @@ function App() {
               </div>
 
               <div className="flex">
-                <input id="submitted" type="radio" value="" name="final-competition" onChange={(event) => {setCompetition(1); localStorage.setItem("competition", 0);}} className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
+                <input id="submitted" type="radio" value="" name="final-competition" onChange={(event) => {setCompetition(0); localStorage.setItem("competition", 0);}} className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
                 <label forHtml="submitted" className="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Submitted (Not on Leaderboard) </label>
               </div>
               
               <div className="flex">
-                <input id="none" type="radio" value="" name="final-competition" onChange={(event) => {setCompetition(-1); localStorage.setItem("competition", -1);}} className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
+                <input checked id="none" type="radio" value="" name="final-competition" onChange={(event) => {setCompetition(-1); localStorage.setItem("competition", -1);}} className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
                 <label forHtml="None" className="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">I give up</label>
               </div>
               </div>
