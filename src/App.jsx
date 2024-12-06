@@ -59,7 +59,7 @@ function App() {
 
   return (
     <>
-      <a href="https://canvas.umn.edu/courses/460454/grades" className="text-base font-medium">Shortcut to Canvas Grades</a>
+      <a href="https://canvas.umn.edu/courses/460454/grades" className="text-base font-medium" target="_blank">Shortcut to Canvas Grades</a>
       <div className="flex flex-rows justify-center items-center text-lg pb-3">
         Predicted Grade: {parseFloat(estimated_score.toFixed(2))}%
       </div>
@@ -245,7 +245,7 @@ function App() {
       </div>
 
       <div className='p-5'>
-        <a href='https://canvas.umn.edu/courses/460454/external_tools/72041'>Don't Forget to do SRT!</a>
+        <a href='https://canvas.umn.edu/courses/460454/external_tools/72041' target="_blank">Don't Forget to do SRT!</a>
         <p className='text-sm'>Last Updated: Dec 6th, 2024</p>
       </div>
       
