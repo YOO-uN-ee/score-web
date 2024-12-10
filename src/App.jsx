@@ -51,11 +51,11 @@ function App() {
   let estimated_score = 0
 
   if (competition === 10){
-    estimated_score = (quiz_contribution + hw_contribution) / 0.9
+    estimated_score = ((quiz_contribution + hw_contribution) / 0.9) + 1
   }
   else {
     // let my_competition = (10 + parseFloat(competition)) * 10 * 0.1;
-    estimated_score = ((quiz_contribution + hw_contribution) / 0.9) + 5 + parseInt(competition)
+    estimated_score = ((quiz_contribution + hw_contribution) / 0.9) + 5 + parseInt(competition) + 1
   }
 
   return (
@@ -248,8 +248,10 @@ function App() {
       </div>
 
       <div className='p-5'>
-        <a href='https://canvas.umn.edu/courses/460454/external_tools/72041' target="_blank">Don't Forget to do SRT!</a>
-        <p className='text-sm'>Last Updated: Dec 6th, 2024</p>
+        <a href='https://canvas.umn.edu/courses/460454/external_tools/72041' target="_blank" className="text-md font-medium"><b>Don't Forget to do SRT!</b></a>
+        <div className="text-sm font-medium">Current SRT Completion Rate: 56%</div>
+        <div className="text-sm font-medium">50%=1pts, 75% = 2pts, 95% = 3pts</div>
+        <p className='text-sm'>Last Updated: Dec 10th, 2024</p>
       </div>
       
     </>
