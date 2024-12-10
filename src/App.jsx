@@ -40,7 +40,7 @@ function App() {
   }, []);
 
   let all_quiz = [parseFloat(quiz1val), parseFloat(quiz2val), parseFloat(quiz3val), parseFloat(quiz4val), parseFloat(quiz5val), parseFloat(quiz6val), parseFloat(quiz7val), parseFloat(quiz8val), parseFloat(quiz9val), parseFloat(quiz10val), parseFloat(quiz11val), parseFloat(quiz12val), parseFloat(quiz13val), parseFloat(quiz14val)]
-  let top_quiz = all_quiz.sort(function(a,b) { return a - b;}).slice(8);
+  let top_quiz = all_quiz.sort(function(a,b) { return a - b;}).slice(9);
   let top_quiz_score = eval(top_quiz.join('+'));
   let quiz_contribution = (top_quiz_score / top_quiz.length) * 10 * 0.3;
 
